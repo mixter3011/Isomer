@@ -1,6 +1,6 @@
+import 'package:fintech/common_widget/primary_button.dart';
 import 'package:flutter/material.dart';
 import 'package:fintech/common/color_extensions.dart';
-import 'package:fintech/common_widget/secondary_button.dart';
 import 'package:fintech/view/login/signup.dart';
 
 class LoginView extends StatefulWidget {
@@ -161,15 +161,15 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(
                   height: 25,
                 ),
-                SecondaryButton(
-                  title: "Sign up with E-mail",
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SignUpView()));
-                  },
-                ),
+                PrimaryButton(
+                title: "Sign up with E-mail",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpView()));
+                },
+              ),
                 const SizedBox(
                   height: 20,
                 ),
