@@ -1,11 +1,11 @@
 import 'package:fintech/common/color_extensions.dart';
 import 'package:flutter/material.dart';
 
-class SIPHomeRow extends StatelessWidget {
+class WatchlistRow extends StatelessWidget {
   final Map<String, dynamic> sObj;
   final VoidCallback onPressed;
 
-  const SIPHomeRow({
+  const WatchlistRow({
     Key? key,
     required this.sObj,
     required this.onPressed,
@@ -31,10 +31,36 @@ class SIPHomeRow extends StatelessWidget {
           alignment: Alignment.center,
           child: Row(
             children: [
-              Image.asset(
-                sObj["icon"],
-                width: 40,
+              Container(
                 height: 40,
+                width: 40,
+                padding: const EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: TColor.gray70.withOpacity(0.5),
+                  ),
+                  color: TColor.gray60.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                alignment: Alignment.center,
+                child: Column(children: [
+                  Text(
+                  "Jun",
+                  style: TextStyle(
+                    color: TColor.gray30,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Text(
+                  "25",
+                  style: TextStyle(
+                    color: TColor.gray30,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                ],),
               ),
               const SizedBox(width: 8),
               Expanded(

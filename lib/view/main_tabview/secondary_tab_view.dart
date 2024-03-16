@@ -1,21 +1,21 @@
 import 'package:fintech/common/color_extensions.dart';
 import 'package:fintech/view/explore/explore_view.dart';
+import 'package:fintech/view/home/entrepreneur_home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../home/home_view.dart';
 
-class MainTabView extends StatefulWidget {
-  const MainTabView({super.key});
+class SecondaryTabView extends StatefulWidget {
+  const SecondaryTabView({super.key});
 
   @override
-  State<MainTabView> createState() => _MainTabViewState();
+  State<SecondaryTabView> createState() => _SecondaryTabViewState();
 }
 
-class _MainTabViewState extends State<MainTabView> {
+class _SecondaryTabViewState extends State<SecondaryTabView> {
   int selectTab = 0;
   PageStorageBucket pageStorageBucket = PageStorageBucket();
-  Widget currentTabView = const HomeView();
+  Widget currentTabView = const EntrepreneurHomeView();
 
   @override
   void initState() {
@@ -50,7 +50,7 @@ class _MainTabViewState extends State<MainTabView> {
                               onPressed: () {
                                 setState(() {
                                   selectTab = 0;
-                                  currentTabView = const HomeView();
+                                  currentTabView = const EntrepreneurHomeView();
                                 });
                               },
                               icon: Image.asset(

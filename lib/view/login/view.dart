@@ -35,7 +35,7 @@ class _SplashState extends State<Splash> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/images/wadwa.png",
+                  "assets/images/llo.png",
                   width: 250,
                   height: 250,
                   fit: BoxFit.contain,

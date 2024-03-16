@@ -28,7 +28,7 @@ class _LoginViewState extends State<LoginView> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  "assets/images/wadwa.png",
+                  "assets/images/llo.png",
                   width: 350,
                   height: 350,
                   fit: BoxFit.contain,

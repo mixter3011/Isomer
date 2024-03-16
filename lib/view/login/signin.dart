@@ -33,7 +33,7 @@ class _SignInViewState extends State<SignInView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/images/wadwa.png",
+                Image.asset("assets/images/llo.png",
                     width: 280,
                     height: 280,
                   ),

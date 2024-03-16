@@ -1,15 +1,22 @@
 import 'package:fintech/common/color_extensions.dart';
 import 'package:flutter/material.dart';
 
-class SIPHomeRow extends StatelessWidget {
-  final Map<String, dynamic> sObj;
+class EnterpriseHomeRow extends StatefulWidget {
+  final Map<String, dynamic> entObj;
   final VoidCallback onPressed;
 
-  const SIPHomeRow({
+  const EnterpriseHomeRow({
     Key? key,
-    required this.sObj,
+    required this.entObj,
     required this.onPressed,
   }) : super(key: key);
+
+  @override
+  _EnterpriseHomeRowState createState() => _EnterpriseHomeRowState();
+}
+
+class _EnterpriseHomeRowState extends State<EnterpriseHomeRow> {
+  bool isStarred = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class SIPHomeRow extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8),
       child: InkWell(
         borderRadius: BorderRadius.circular(16),
-        onTap: onPressed,
+        onTap: widget.onPressed,
         child: Container(
           height: 64,
           padding: const EdgeInsets.all(10),
@@ -32,14 +39,14 @@ class SIPHomeRow extends StatelessWidget {
           child: Row(
             children: [
               Image.asset(
-                sObj["icon"],
+                widget.entObj["icon"],
                 width: 40,
                 height: 40,
               ),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
-                  sObj["name"],
+                  widget.entObj["name"],
                   style: TextStyle(
                     color: TColor.white,
                     fontSize: 14,
@@ -48,10 +55,10 @@ class SIPHomeRow extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              _buildTag(sObj["tag"]), // Display corresponding tag
+              _buildStarButton(),
               const SizedBox(width: 8),
               Text(
-                "\₹${sObj["price"]}",
+                "${widget.entObj["price"]}",
                 style: TextStyle(
                   color: TColor.white,
                   fontSize: 14,
@@ -65,18 +72,33 @@ class SIPHomeRow extends StatelessWidget {
     );
   }
 
+  Widget _buildStarButton() {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isStarred = !isStarred;
+        });
+      },
+      child: Icon(
+        isStarred ? Icons.star : Icons.star_border,
+        color: isStarred ? Colors.blue : TColor.white,
+        size: 24,
+      ),
+    );
+  }
+
   Widget _buildTag(String tag) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: TColor.gray30.withOpacity(0.2), // You can change the color here
+        color: TColor.gray30.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
-        tag, // Use the tag provided in sObj
+        tag,
         style: const TextStyle(
-          color: Colors.white, // You can customize the text color here
-          fontSize: 12, // You can customize the font size here
+          color: Colors.white,
+          fontSize: 12,
         ),
       ),
     );

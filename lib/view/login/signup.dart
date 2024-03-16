@@ -1,8 +1,8 @@
 import 'package:fintech/common/color_extensions.dart';
+import 'package:fintech/common_widget/choice.dart';
 import 'package:fintech/common_widget/primary_button.dart';
 import 'package:fintech/common_widget/round_textfield.dart';
 import 'package:fintech/view/login/signin.dart';
-import 'package:fintech/view/main_tabview/main_tab_view.dart';
 import 'package:flutter/material.dart';
 
 class SignUpView extends StatefulWidget {
@@ -34,7 +34,7 @@ class _SignUpViewState extends State<SignUpView> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset(
-                  "assets/images/wadwa.png",
+                  "assets/images/llo.png",
                   width: 280,
                   height: 280,
                 ),
@@ -117,7 +117,7 @@ class _SignUpViewState extends State<SignUpView> {
                      Navigator.push(
                        context,
                        MaterialPageRoute(
-                         builder: (context) => const MainTabView(),
+                         builder: (context) => const Choice(),
                        ),
                     );
                   },
